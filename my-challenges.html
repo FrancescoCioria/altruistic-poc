@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .flex-column {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 24px;
+      }
+
+      .airtable-container {
+        flex-grow: 1;
+        position: relative;
+        overflow: hidden;
+        background-color: gray;
+      }
+
+      iframe {
+        position: absolute;
+        border: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: calc(100% + 25px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-column">
+      <h1>My Challenges</h1>
+      <p>Esempio view di airtable embedded in un HTML custom</p>
+
+      <div class="airtable-container">
+        <iframe
+          class="airtable-embed"
+          src="https://airtable.com/embed/shrzrvQRs3hcRJtGI?backgroundColor=yellow&viewControls=on"
+          frameborder="0"
+          onmousewheel=""
+          width="100%"
+          height="533"
+          style="background: transparent; border: 1px solid #ccc"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>
