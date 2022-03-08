@@ -23,7 +23,9 @@
         flex-grow: 1;
         position: relative;
         overflow: hidden;
-        background-color: gray;
+        background-color: #f0f0f0;
+        border: 2px solid #f0f0f0;
+        border-radius: 1px;
       }
 
       iframe {
@@ -33,6 +35,11 @@
         left: 0;
         right: 0;
         height: calc(100% + 25px);
+      }
+
+      h1 {
+        margin: 0;
+        margin-bottom: 12px;
       }
     </style>
   </head>
@@ -44,7 +51,7 @@
       <div class="airtable-container">
         <iframe
           class="airtable-embed"
-          src="https://airtable.com/embed/shrzrvQRs3hcRJtGI?backgroundColor=yellow&viewControls=on"
+          src="https://airtable.com/embed/shrzrvQRs3hcRJtGI?backgroundColor=yellow"
           frameborder="0"
           onmousewheel=""
           width="100%"
