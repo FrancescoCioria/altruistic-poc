@@ -28,12 +28,22 @@
         border-radius: 1px;
       }
 
+      .form-container {
+        position: fixed;
+        height: 80vh;
+        width: 40vw;
+        top: 10vh;
+        left: 30vw;
+        visibility: hidden;
+      }
+
       iframe {
         position: absolute;
         border: none;
         top: 0;
         left: 0;
         right: 0;
+        width: 100%;
         height: calc(100% + 25px);
       }
 
@@ -48,15 +58,43 @@
       <h1>My Challenges</h1>
       <p>Esempio view di airtable embedded in un HTML custom</p>
 
+      <button
+        id="create_challenge_button"
+        style="position: absolute; top: 84px; right: 24px"
+      >
+        Crea Challenge
+      </button>
+
       <div class="airtable-container">
         <iframe
           class="airtable-embed"
           src="https://airtable.com/embed/shrzrvQRs3hcRJtGI?backgroundColor=yellow"
           frameborder="0"
           onmousewheel=""
-          width="100%"
+        ></iframe>
+      </div>
+
+      <div id="create_challenge_form" class="airtable-container form-container">
+        <iframe
+          class="airtable-embed"
+          src="https://airtable.com/embed/shrRTyGNyAWtVSIcn?backgroundColor=yellow"
+          frameborder="0"
+          onmousewheel=""
         ></iframe>
       </div>
     </div>
+
+    <script>
+      window.addEventListener("message", message => {
+        console.log(message);
+      });
+
+      document
+        .getElementById("create_challenge_button")
+        .addEventListener("click", () => {
+          document.getElementById("create_challenge_form").style.visibility =
+            "visible";
+        });
+    </script>
   </body>
 </html>
